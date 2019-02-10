@@ -152,6 +152,7 @@ public class GroundTruthAmbientOcclusion : MonoBehaviour {
     void Awake()
     {
         RenderCamera = gameObject.GetComponent<Camera>();
+	RenderCamera.depthTextureMode = DepthTextureMode.Depth | DepthTextureMode.DepthNormals | DepthTextureMode.MotionVectors;
         GTAOMaterial = new Material(Shader.Find("Hidden/GroundTruthAmbientOcclusion"));
     }
 
